@@ -1,0 +1,56 @@
+{
+  "iOS_Simulator": {
+    "capabilities": {
+      "platformVersion": "13.3",
+      "deviceName": "iPhone 11"
+    }
+  },
+  "iPhone_11": {
+    "capabilities": {
+      "platformVersion": "13.3",
+      "deviceName": "iPhone 11",
+      "udid": "device_udid",
+      "wdaLocalPort": "8081"
+    }
+  },
+  "Android_Emulator": {
+    "capabilities": {
+      "deviceName": "Android Emulator"
+    }
+  },
+  "Nexus": {
+    "capabilities": {
+      "deviceName": "Nexus",
+      "udid": "device_udid",
+      "systemPort": "8082"
+    }
+  },
+  "Samsung_Galaxy": {
+    "capabilities": {
+      "deviceName": "Samsung Galaxy",
+      "udid": "device_udid",
+      "systemPort": "8082"
+    }
+  },
+  "Note5": {
+    "capabilities": {
+      "deviceName": "Nexus",
+      "udid": "0815f818a7403405",
+      "systemPort": "8082"
+    }
+  },
+  "XiaomiMiA2": {
+    "capabilities": {
+      "deviceName": "Xiaomi",
+      "udid": "796ac12",
+      "systemPort": "8082"
+    }
+  },
+  "Note8": {
+    "capabilities": {
+      "deviceName": "Note8",
+      "udid": "988e1637354b48384130",
+      "systemPort": "8082"
+    }
+  }
+}
