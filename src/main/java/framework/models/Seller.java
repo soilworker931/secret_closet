@@ -1,4 +1,4 @@
-package framework.elements;
+package framework.models;
 
 import org.openqa.selenium.By;
 
@@ -16,8 +16,11 @@ public class Seller {
         return sellerCity;
     }
 
-    public void setSeller() {
-        this.sellerName = getElementFactory().getLabel(By.id("com.zdv.secretcloset:id/tvItemSellerName"), "seller name").getAttribute("text");
-        this.sellerCity = getElementFactory().getLabel(By.id("com.zdv.secretcloset:id/tvItemSellerCity"), "seller city").getAttribute("text");;
+    public void setSellerName(String sellerName) {
+        this.sellerName = sellerName;
+    }
+
+    public void setSellerCity(String sellerCity) {
+        this.sellerCity = sellerCity;
     }
 }

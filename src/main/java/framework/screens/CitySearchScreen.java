@@ -6,11 +6,11 @@ import aquality.appium.mobile.elements.interfaces.ITextBox;
 import org.openqa.selenium.By;
 
 public class CitySearchScreen extends AndroidScreen {
+    private ITextBox citySearch = getElementFactory().getTextBox(By.id("com.zdv.secretcloset:id/etSearchTest"), "Search city");
+
     public CitySearchScreen() {
         super(By.id("com.zdv.secretcloset:id/tvTitle"), "Select city");
     }
-
-    private ITextBox citySearch = getElementFactory().getTextBox(By.id("com.zdv.secretcloset:id/etSearchTest"), "Search city");
 
     public void searchAndSelectCity(String city) {
         AqualityServices.getLogger().info("Search city: " + city);

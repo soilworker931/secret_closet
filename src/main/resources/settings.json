@@ -5,8 +5,8 @@
   "screensLocation": "<NAME_OF_PACKAGE_WITH_SCREENS>",
   "driverSettings": {
     "android": {
-      "deviceKey": "Note8",
-      "applicationPath": "C:/Users/g.gurinovich/IdeaProjects/secret_closet/src/main/resources/SecretCloset_v1.05_apkpure.com.apk",
+      "deviceKey": "XiaomiMiA2",
+      "applicationPath": "src/main/resources/SecretCloset_v1.05_apkpure.com.apk",
       "capabilities": {
         "platformName": "Android",
         "automationName": "UiAutomator2"

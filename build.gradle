@@ -9,8 +9,14 @@ repositories {
     mavenCentral()
 }
 
+test {
+    useTestNG()
+    testLogging {
+        events "PASSED", "FAILED", "SKIPPED"
+    }
+}
+
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
     implementation 'com.github.aquality-automation:aquality-appium-mobile:2.2.0'
     implementation 'org.testng:testng:7.3.0'
     implementation 'com.google.guava:guava:28.2-jre'

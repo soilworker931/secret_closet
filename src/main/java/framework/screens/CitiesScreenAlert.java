@@ -8,7 +8,7 @@ public class CitiesScreenAlert extends AndroidScreen {
     private IButton okButton = getElementFactory().getButton(By.id("android:id/button1"), "city button");
 
     public CitiesScreenAlert() {
-        super(By.id("android:id/alertTitle"), "Please do not forget alert");
+        super(By.id("android:id/alertTitle"), "Cities screen alert");
     }
 
     public void clickOkButton() {

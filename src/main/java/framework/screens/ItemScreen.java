@@ -4,6 +4,7 @@ import aquality.appium.mobile.actions.SwipeDirection;
 import aquality.appium.mobile.application.AqualityServices;
 import aquality.appium.mobile.elements.interfaces.IButton;
 import aquality.appium.mobile.elements.interfaces.ILabel;
+import framework.models.Item;
 import org.openqa.selenium.By;
 
 public class ItemScreen extends AndroidScreen{
@@ -16,21 +17,31 @@ public class ItemScreen extends AndroidScreen{
         super(By.id("com.zdv.secretcloset:id/rlBuyButton"), "Item screen");
     }
 
-    public boolean isCorrectItemOpened(String mainScreenName, String mainScreenPrice, String mainScreenDiscount, String mainScreenPriceWithDiscount) {
-        AqualityServices.getLogger().info("Check that correct item is opened");
-        boolean check = false;
-        if (itemName.getAttribute("text").equals(mainScreenName)
-                &&itemPriceWithDiscount.getAttribute("text").contains(mainScreenPriceWithDiscount)) {
-            scrollToItemPriceLabel();
-            if (itemPrice.getAttribute("text").equals(mainScreenPrice)
-            && itemDiscount.getAttribute("text").equals(mainScreenDiscount)) {
-                check = true;
-            }
+    public boolean isCorrectItemNameDisplayed(Item item) {
+        AqualityServices.getLogger().info("Check that correct item name is displayed");
+        return itemName.getAttribute("text").equals(item.getItemName());
+    }
+
+    public boolean isCorrectItemPriceWithDiscountDisplayed(Item item) {
+        AqualityServices.getLogger().info("Check that correct item price with discount is displayed");
+        return itemPriceWithDiscount.getAttribute("text").contains(item.getItemPriceWithDiscount());
+    }
+
+    public boolean isCorrectItemPriceDisplayed(Item item) {
+        AqualityServices.getLogger().info("Check that correct item price is displayed");
+        scrollToItemPriceLabel();
+        return itemPrice.getAttribute("text").equals(item.getItemPrice());
+    }
+
+    public boolean isCorrectDiscountDisplayed(Item item) {
+        AqualityServices.getLogger().info("Check that correct item discount is displayed");
+        if (itemDiscount.getAttribute("text").equals(item.getItemDiscount())) {
+            scrollToTheItemNameLabel();
+            return true;
         } else {
-            check = false;
+            scrollToTheItemNameLabel();
+            return false;
         }
-        scrollToTheItemNameLabel();
-        return check;
     }
 
     public void scrollToItemPriceLabel() {

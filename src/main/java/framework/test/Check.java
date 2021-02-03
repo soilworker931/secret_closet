@@ -2,8 +2,8 @@ package framework.test;
 
 import aquality.appium.mobile.application.AqualityServices;
 import aquality.appium.mobile.application.MobileModule;
-import framework.elements.Item;
-import framework.elements.Seller;
+import framework.models.Item;
+import framework.models.Seller;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -35,14 +35,19 @@ public class Check {
         CITIES_SCREEN_ALERT.clickOkButton();
         CITY_SEARCH_SCREEN.searchAndSelectCity(CITY);
         Assert.assertTrue(MAIN_SCREEN.isCorrectCitySelected(CITY), "Incorrect city is shown");
-        item.setItem();
+        MAIN_SCREEN.setItem(item);
         MAIN_SCREEN.clickFirstItem();
         Assert.assertTrue(ITEM_SCREEN.state().waitForDisplayed(), "Item page was not shown");
-        Assert.assertTrue(ITEM_SCREEN.isCorrectItemOpened(item.getItemName(), item.getItemPrice(), item.getItemDiscount(), item.getItemPriceWithDiscount()), "Incorrect item is shown");
-        seller.setSeller();
+        Assert.assertTrue(ITEM_SCREEN.isCorrectItemNameDisplayed(item), "Incorrect item name is shown");
+        Assert.assertTrue(ITEM_SCREEN.isCorrectItemPriceWithDiscountDisplayed(item), "Incorrect item price with discount is shown");
+        Assert.assertTrue(ITEM_SCREEN.isCorrectItemPriceDisplayed(item), "Incorrect item price is shown");
+        Assert.assertTrue(ITEM_SCREEN.isCorrectDiscountDisplayed(item), "Incorrect item discount is shown");
+        SELLER_SCREEN.setSeller(seller);
         ITEM_SCREEN.openSellerPage();
         Assert.assertTrue(SELLER_SCREEN.state().waitForDisplayed(), "Seller page was not shown");
-        Assert.assertTrue(SELLER_SCREEN.isCorrectSellerDisplayed(seller.getSellerName(), seller.getSellerCity(), CITY), "Incorrect information is shown in the seller screen");
+        Assert.assertTrue(SELLER_SCREEN.isCorrectSellerNameDisplayed(seller), "Incorrect seller name is shown");
+        Assert.assertTrue(SELLER_SCREEN.isCorrectSellerCityDisplayed(seller), "Incorrect seller city is shown");
+        Assert.assertTrue(SELLER_SCREEN.isSellerFromCorrectCityDisplayed(CITY), "Incorrect seller city from search is shown");
     }
 
     @AfterMethod
