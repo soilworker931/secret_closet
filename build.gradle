@@ -11,9 +11,6 @@ repositories {
 
 test {
     useTestNG()
-    testLogging {
-        events "PASSED", "FAILED", "SKIPPED"
-    }
 }
 
 dependencies {

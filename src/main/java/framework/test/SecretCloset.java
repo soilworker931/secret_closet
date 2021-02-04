@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import framework.screens.*;
 
-public class Check {
+public class SecretCloset {
     private static final MainScreen MAIN_SCREEN = new MainScreen();
     private static final CitiesScreenAlert CITIES_SCREEN_ALERT = new CitiesScreenAlert();
     private static final CitySearchScreen CITY_SEARCH_SCREEN = new CitySearchScreen();

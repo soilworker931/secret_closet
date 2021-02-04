@@ -1,9 +1,0 @@
-<suite name="check" thread-count="3" parallel="classes">
-    <test name="Check test">
-        <groups>
-            <run>
-                <include name="check"/>
-            </run>
-        </groups>
-    </test>
-</suite>
