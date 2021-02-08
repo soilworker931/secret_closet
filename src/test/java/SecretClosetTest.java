@@ -3,6 +3,7 @@ import aquality.appium.mobile.application.MobileModule;
 import framework.models.Item;
 import framework.models.Seller;
 import framework.screens.*;
+import framework.utils.Appium;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -22,6 +23,7 @@ public class SecretClosetTest {
     public void testFunc() {
         System.clearProperty("profile");
         AqualityServices.initInjector(new MobileModule(AqualityServices::getApplication));
+        Appium.startServer();
     }
 
     @Test
@@ -51,5 +53,6 @@ public class SecretClosetTest {
     @AfterMethod
     public void closeApp() {
         AqualityServices.getApplication().quit();
+        Appium.stopServer();
     }
 }
