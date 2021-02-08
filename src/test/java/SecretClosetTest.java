@@ -29,7 +29,6 @@ public class SecretClosetTest {
 
     @Test
     public void startTest() {
-        System.out.println("german");
         Assert.assertTrue(MAIN_SCREEN.state().isDisplayed(), "Main screen was not shown");
         MAIN_SCREEN.clickCityButton();
         CITIES_SCREEN_ALERT.state().waitForExist();
