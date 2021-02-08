@@ -17,4 +17,5 @@ dependencies {
     implementation 'com.github.aquality-automation:aquality-appium-mobile:2.2.0'
     implementation 'org.testng:testng:7.3.0'
     implementation 'com.google.guava:guava:28.2-jre'
+    compile group: 'io.appium', name: 'java-client', version: '4.1.2'
 }

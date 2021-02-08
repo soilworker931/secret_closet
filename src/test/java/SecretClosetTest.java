@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class SecretClosetTest {
+    private Appium appium = new Appium();
     private static final MainScreen MAIN_SCREEN = new MainScreen();
     private static final CitiesScreenAlert CITIES_SCREEN_ALERT = new CitiesScreenAlert();
     private static final CitySearchScreen CITY_SEARCH_SCREEN = new CitySearchScreen();
@@ -21,9 +22,9 @@ public class SecretClosetTest {
 
     @BeforeMethod
     public void testFunc() {
+        appium.startServer();
         System.clearProperty("profile");
         AqualityServices.initInjector(new MobileModule(AqualityServices::getApplication));
-        Appium.startServer();
     }
 
     @Test
@@ -52,7 +53,7 @@ public class SecretClosetTest {
 
     @AfterMethod
     public void closeApp() {
+        appium.stopServer();
         AqualityServices.getApplication().quit();
-        Appium.stopServer();
     }
 }
