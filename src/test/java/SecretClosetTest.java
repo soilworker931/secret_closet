@@ -53,7 +53,7 @@ public class SecretClosetTest {
 
     @AfterMethod
     public void closeApp() {
-        appium.stopServer();
         AqualityServices.getApplication().quit();
+        appium.stopServer();
     }
 }
